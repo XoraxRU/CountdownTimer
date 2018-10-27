@@ -115,7 +115,7 @@ class GeneralPageVC: UIViewController {
     }
   
     
-    // GET
+    // Receive JSON
     private func getRequest() {
         guard let url = URL(string: videoIBJson) else { return }
         let task = URLSession.shared.dataTask(with: url) {
@@ -136,7 +136,7 @@ class GeneralPageVC: UIViewController {
                     /*// show JSON
                     let jsonResult = try JSONSerialization.jsonObject(with: data, options: [])
                     print(jsonResult)
-                    */// get JSON
+                    */// decode JSON
                     let websiteDescription = try JSONDecoder().decode(WebsiteDescription.self, from: data)
                     //print("RESULT: ", websiteDescription.season_start, websiteDescription.seasonDeadline)
                     self.seasonStartTime = websiteDescription.season_start.value
